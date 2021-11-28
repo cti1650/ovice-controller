@@ -1,22 +1,14 @@
 {
-  "name": "oVice Tools",
-  "version": "1.0.0.72",
-  "description": "oVice Tools",
-  "permissions": [
-    "tabs",
-    "declarativeContent",
-    "activeTab",
-    "storage",
-    "notifications",
-    "alarms",
-    "http://*/*",
-    "https://*/*"
-  ],
-  "content_scripts": [
-    {
-      "matches": ["https://qin.ovice.in/*"],
-      "js": ["js/content_script.js"]
-    }
-  ],
-  "manifest_version": 2
+  "name": "oVice Controller",
+  "version": "0.0.0.10",
+  "description": "oVice Controller",
+  "action": {
+    "default_title": "oVice Controller"
+  },
+  "background": {
+    "service_worker": "event.js"
+  },
+  "permissions": ["tabs", "activeTab", "contextMenus", "scripting", "windows"],
+  "host_permissions": ["https://*.ovice.in/"],
+  "manifest_version": 3
 }
